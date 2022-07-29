@@ -4,17 +4,23 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.springboot.demo.models.User;
 import com.springboot.demo.repositories.UserRepository;
 
+@Service
 public class DefaultUserService implements UserService{
     UserRepository userRepository;
 
     @Autowired
     public DefaultUserService(UserRepository userRepository) {
         this.userRepository = userRepository;
+
+        System.out.println("DefaultUserService is called");
     }
+
+
 
     @Override
     public User createUser(User requestUser) {

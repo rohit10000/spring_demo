@@ -20,11 +20,13 @@ public class UserController {
     
     UserService userService;
 
-    @Autowired// telling spring that make this dependency available prior to the creation of UserController class
+    // telling spring that make this dependency available prior to the creation of UserController class
+    @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
         // this is dependency injection.
         // in this way we injection dependency.
+        System.out.println("UserController constructor is called");
     }
 
 
@@ -47,3 +49,19 @@ public class UserController {
         return userService.getUser(id);
     }
 }
+
+
+
+/* 
+ * 
+ * Getting error:
+ * Description:
+
+    Parameter 0 of constructor in com.springboot.demo.controllers.UserController required a bean of type 'com.springboot.demo.services.UserService' that could not be found.
+    2
+
+    Action:
+
+    Consider defining a bean of type 'com.springboot.demo.services.UserService' in your configuration.
+
+*/

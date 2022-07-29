@@ -11,7 +11,9 @@ public class UserRepository {
 
     Map<UUID, User> users = new HashMap<>();
 
-    public UserRepository() {}
+    public UserRepository() {
+        System.out.println("UserRepository constructor called");
+    }
     
     public void addUser(User user) {
         users.put(user.getId(), user);

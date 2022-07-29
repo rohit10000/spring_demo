@@ -2,7 +2,7 @@ package com.springboot.demo.services;
 
 import java.util.*;
 
-import org.springframework.stereotype.Service;
+// import org.springframework.stereotype.Service;
 
 import com.springboot.demo.models.User;
 
@@ -13,7 +13,7 @@ import com.springboot.demo.models.User;
 
 // @Service - @component - handle business logic
 
-@Service
+//@Service
 public interface UserService {
     public User createUser(User user);
     public List<User> getAllUsers();
